@@ -20,7 +20,17 @@ button {
     color:white;
     border-radius:5px;
 }
+.hero {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+}
 
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 /* Profiles page */
 .profiles-body {
     display:flex;
@@ -63,4 +73,21 @@ button {
 .profile-card:hover img {
     transform: scale(1.1);
     box-shadow: 0 0 50px rgb(136, 0, 0);
+}
+.shows {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.shows img {
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.shows img:hover {
+    transform: scale(1.08);
 }
