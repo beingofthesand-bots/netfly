@@ -4,9 +4,6 @@
     <title>Netfly</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<script>
-window.location.href = "profiles.html";
-</script>
 
 <body>
 
@@ -19,19 +16,69 @@ window.location.href = "profiles.html";
 </header>
 
 <section class="hero">
-    <video autoplay muted loop>
+
+    <video id="heroVideo" autoplay muted loop>
         <source src="assets/The Dark - Official Movie Trailer (2018).mp4" type="video/mp4">
     </video>
-    <div class="hero-text">
-        <h2>Featured Show</h2>
-        <p>Watch now</p>
+
+    <div class="hero-overlay">
+        <h2 class="hero-title">Dark</h2>
+
+        <div class="hero-buttons">
+            <button class="play-btn">
+                ▶ Watch Now
+            <button class="mute-btn" onclick="toggleMute()" id="muteBtn">
+                <!-- Sound ON Icon -->
+                <svg id="iconSoundOn" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15 9a4 4 0 0 1 0 6"></path>
+                    <path d="M19 5a9 9 0 0 1 0 14"></path>
+                </svg>
+
+                <!-- Muted Icon -->
+                <svg id="iconMuted" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+            </button>
+
+
+        </div>
+    </div>
+
+</section>
+
+<section class="content-row">
+    <h2>Trending Now</h2>
+    <div class="row-posters">
+        <img src="assets/images/True-Detective.jpg">
+        <img src="assets/images/suits.jpg">
+        <img src="assets/images/Shutter-island.jpg">
+        <img src="assets/images/True-Detective.jpg">
+        <img src="assets/images/Shutter-island.jpg">
+        <img src="assets/images/suits.jpg">
     </div>
 </section>
 
-<section class="shows">
-    <img src="assets/images/True-Detective.jpg">
-    <img src="assets/images/suits.jpg">
-    <img src="assets/images/Shutter-island.jpg">
+<section class="content-row">
+    <h2>Popular Series</h2>
+    <div class="row-posters">
+        <img src="assets/images/suits.jpg">
+        <img src="assets/images/Shutter-island.jpg">
+        <img src="assets/images/True-Detective.jpg">
+        <img src="assets/images/suits.jpg">
+    </div>
+</section>
+
+<section class="content-row">
+    <h2>Recommended For You</h2>
+    <div class="row-posters">
+        <img src="assets/images/Shutter-island.jpg">
+        <img src="assets/images/True-Detective.jpg">
+        <img src="assets/images/suits.jpg">
+        <img src="assets/images/Shutter-island.jpg">
+    </div>
 </section>
 
 <script src="script.js"></script>
