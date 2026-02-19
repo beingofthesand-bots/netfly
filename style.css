@@ -91,34 +91,71 @@ button {
 .shows img:hover {
     transform: scale(1.08);
 }
+.hero video {
+    animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
 .hero {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     overflow: hidden;
-}
-
-.hero video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-overlay {
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
     color: white;
 }
 
-.hero-title {
+/* Video fills background */
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Dark overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    z-index: 1;
+}
+
+/* LEFT SIDE CONTENT */
+.hero-content {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    z-index: 2;
+}
+
+.hero-content h1 {
     font-size: 60px;
-    font-weight: bold;
     margin-bottom: 15px;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 15px;
+.watch-btn {
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* MUTE BUTTON RIGHT SIDE */
+.mute-btn {
+    position: absolute;
+    bottom: 80px;
+    right: 60px;
+    z-index: 2; /* same layer as hero-content */
 }
 
 .play-btn {
@@ -175,29 +212,19 @@ button {
     font-size: 22px;
 }
 
-.row-posters {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.row-posters::-webkit-scrollbar {
-    display: none;
-}
-
 .row-posters img {
     width: 200px;
     height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .row-posters img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
+
 /* Background */
 .profiles-body {
     margin: 0;
@@ -258,4 +285,50 @@ button {
 .profile-card p {
     margin-top: 10px;
     font-size: 18px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    color: white;
+    z-index: 100;
+    transition: background 0.4s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(0,0,0,0.9);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e50914;
+}
+.profile-menu {
+    display: flex;
+    align-items: center;
+}
+
+.profile-menu img {
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    object-fit: cover;
+    cursor: pointer;
 }
