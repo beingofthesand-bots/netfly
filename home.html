@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Netfly</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,60 +14,62 @@
     <div class="logo">NETFLY</div>
 
     <ul class="nav-links">
-        <li>Home</li>
-        <li>TV Shows</li>
-        <li>Movies</li>
-        <li>New & Popular</li>
-        <li>My List</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">New & Popular</a></li>
+        <li><a href="#">My List</a></li>
     </ul>
 
-    <div class="profile-menu">
-        <img src="assets/images/monis.png" alt="Profile">
+    <div class="nav-actions">
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <button class="profile-menu" type="button" onclick="switchProfile()" aria-label="Switch profile">
+            <img src="assets/images/monis.png" alt="Profile">
+        </button>
     </div>
 </nav>
 
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <video autoplay muted loop playsinline id="heroVideo" poster="assets/images/True-Detective.jpg">
+            <source src="assets/dark-trailer.mp4" type="video/mp4">
+        </video>
 
-<!-- HERO -->
-<section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow" id="heroEyebrow">NETFLY ORIGINAL</div>
+            <h1 class="hero-title" id="heroTitle">Dark</h1>
+            <div class="hero-meta" id="heroMeta">2017 | 3 Seasons</div>
+            <p class="hero-desc" id="heroDesc">
+                A small town's disappearance unravels a time-travel mystery spanning generations.
+            </p>
 
-    <video autoplay muted loop id="heroVideo">
-        <source src="assets/dark-trailer.mp4" type="video/mp4">
-    </video>
-
-    <div class="hero-content">
-        <h1 class="hero-title">Dark</h1>
-
-        <div class="hero-buttons">
-            <button class="watch-btn">▶ Watch Now</button>
-            <button class="mute-btn" onclick="toggleMute()">🔇</button>
+            <div class="hero-buttons">
+                <button class="primary-btn" type="button">Play</button>
+                <button class="secondary-btn" type="button">More Info</button>
+            </div>
         </div>
-    </div>
 
-</section>
+        <button class="mute-btn is-muted" type="button" aria-label="Unmute">
+            <svg class="mute-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path class="speaker" d="M4 9v6h4l5 4V5L8 9H4z" />
+                <path class="wave" d="M16.5 8.5a5 5 0 0 1 0 7" />
+                <path class="wave" d="M18.5 6.5a8 8 0 0 1 0 11" />
+                <path class="slash" d="M3 3l18 18" />
+            </svg>
+        </button>
+    </section>
 
+    <!-- CONTENT ROWS -->
+    <div id="rows"></div>
+</main>
 
-<!-- CONTENT ROWS -->
-<section class="content-row">
-    <h2>Trending Now</h2>
-    <div class="row-posters">
-        <img src="assets/images/True-Detective.jpg">
-        <img src="assets/images/suits.jpg">
-        <img src="assets/images/Shutter-island.jpg">
-        <img src="assets/images/True-Detective.jpg">
-        <img src="assets/images/Shutter-island.jpg">
-        <img src="assets/images/suits.jpg">
-    </div>
-</section>
-
-<section class="content-row">
-    <h2>Popular Series</h2>
-    <div class="row-posters">
-        <img src="assets/images/suits.jpg">
-        <img src="assets/images/Shutter-island.jpg">
-        <img src="assets/images/True-Detective.jpg">
-        <img src="assets/images/suits.jpg">
-    </div>
-</section>
-
-<section class="content-row">
-    <h2>Recommended F
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
